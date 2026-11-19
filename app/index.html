@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — Vice Got a Price! | Offline Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation trophies: official names, grades, cited guides, roadmap to platinum, missable warnings, spoiler-safe checklist.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">VI</div>
+    <div>
+      <h1>Grand Theft Auto VI — Trophy Guide</h1>
+      <p class="sub">All 55 PS5 trophies · offline tracker · roadmap to the platinum <strong>“Vice Got a Price!”</strong></p>
+    </div>
+  </div>
+  <div class="progress" id="progress" aria-label="Platinum progress">
+    <div class="progress-text"><span id="earned-count">0 / 55</span><span id="earned-pct">0%</span></div>
+    <div class="bar"><div class="fill" id="progress-fill" style="width:0%"></div></div>
+    <p class="progress-note" id="progress-note">Earn every other trophy to unlock the platinum.</p>
+  </div>
+</header>
+
+<main>
+  <section class="controls" aria-label="Tracker controls">
+    <input id="search" type="search" placeholder="Search trophies — try “bank”, “meditate”, “drone”…" aria-label="Search trophies" autocomplete="off">
+    <div class="filters" id="filters" role="group" aria-label="Filter trophies">
+      <button data-filter="all" class="active">All 55</button>
+      <button data-filter="story">Story</button>
+      <button data-filter="missable">Missable</button>
+      <button data-filter="collectibles">Collectibles</button>
+      <button data-filter="activities">Activities</button>
+      <button data-filter="online">Online</button>
+      <button data-filter="earned">Earned</button>
+      <button data-filter="todo">To do</button>
+    </div>
+    <label class="spoiler-toggle"><input type="checkbox" id="spoiler"> <span>Spoiler-safe: hide story trophies until earned</span></label>
+    <div class="io">
+      <button id="export-btn" type="button">Export progress</button>
+      <button id="import-btn" type="button">Import progress</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <button id="reset-btn" type="button" class="danger">Reset</button>
+    </div>
+  </section>
+
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to platinum">
+    <h2>Roadmap to platinum <span class="muted">— about 200 hours, one playthrough, no online trophies</span></h2>
+    <ol class="stages">
+      <li data-stage="1"><strong>Stage 1 — Story first.</strong> Play Chapters 1–5 and the side-character finales. Do the Chapter 1 balcony meditation for <em>Positive Mental Attitude</em> before Chapter 1 ends — it is the only missable trophy — and keep a manual save at the start of every chapter. There is no mission replay. <span class="stage-count" data-stage-count="1"></span></li>
+      <li data-stage="2"><strong>Stage 2 — Collectibles.</strong> Cards, WAiNK locations, vehicles and garages, plus the two money trophies. Sweep region by region with the in-game trackers open. <span class="stage-count" data-stage-count="2"></span></li>
+      <li data-stage="3"><strong>Stage 3 — Activities.</strong> Races, shooting ranges, drone races, robberies, stunts and challenges. Vaults and armored trucks unlock in Chapters 3–4. <span class="stage-count" data-stage-count="3"></span></li>
+      <li data-stage="4"><strong>Stage 4 — Cleanup.</strong> Mop up the 100% checklist (Progress &gt; Stats &gt; 100% Completion) for <em>A Long Road</em>; the platinum pops with it. <span class="stage-count" data-stage-count="4"></span></li>
+    </ol>
+    <p class="missable-callout" id="missable-callout">⚠ Only one trophy can be missed: <strong>Positive Mental Attitude</strong> — the Chapter 1 balcony meditation disappears after Chapter 1. Everything else stays available after the credits.</p>
+  </section>
+
+  <section aria-label="Trophy list">
+    <p class="list-meta" id="list-meta"></p>
+    <ul class="trophies" id="trophy-list"></ul>
+    <p class="empty" id="empty-state" hidden>No trophies match this filter. There are no online trophies in GTA VI — every trophy is single-player.</p>
+  </section>
+
+  <section class="detail" id="detail" hidden aria-label="Trophy detail">
+    <button id="detail-close" type="button" aria-label="Close detail">✕</button>
+    <p class="detail-grade" id="detail-grade"></p>
+    <h2 id="detail-name"></h2>
+    <p class="detail-desc" id="detail-desc"></p>
+    <div class="detail-badges" id="detail-badges"></div>
+    <h3>How to unlock it</h3>
+    <p id="detail-guide"></p>
+    <p class="detail-missable" id="detail-missable" hidden></p>
+    <h3>Sources</h3>
+    <ul class="sources" id="detail-sources"></ul>
+    <label class="earned-check"><input type="checkbox" id="detail-earned"> <span>Earned — tick this trophy off</span></label>
+  </section>
+
+  <footer>
+    <p>Names, descriptions and grades are the official PlayStation trophy list as reported 18 Nov 2026 (Exophase via Push Square; GTABase and Output Lag lists agree). Guides are written in our own words from the official descriptions and the cited launch-week sources; where no unlock method is confirmed at launch the guide says so. No Rockstar logo or official artwork is used. Works fully offline — no network requests.</p>
+    <p class="muted">Fan-made guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Not affiliated with Rockstar Games.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+:root {
+  --bg: #0d0a14;
+  --panel: #171226;
+  --panel-2: #1f1832;
+  --ink: #f2ecff;
+  --muted: #b3a8cc;
+  --line: #332a4d;
+  --pink: #ff2e88;
+  --cyan: #22d3ee;
+  --gold: #f5c542;
+  --silver: #c0c8d4;
+  --bronze: #d08a4a;
+  --platinum: #7fe3f0;
+  --danger: #ff5c5c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+a { color: var(--cyan); }
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 28px 28px 18px;
+  border-bottom: 2px solid var(--pink);
+  background: linear-gradient(135deg, #1a0f2e 0%, #0d0a14 60%);
+}
+.brand { display: flex; gap: 16px; align-items: center; }
+.brand-mark {
+  width: 64px; height: 64px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 800; letter-spacing: 1px;
+  color: #0d0a14;
+  background: linear-gradient(135deg, var(--pink), var(--cyan));
+  border-radius: 12px;
+}
+h1 { font-size: 26px; margin: 0 0 4px; line-height: 1.2; }
+.sub { margin: 0; color: var(--muted); font-size: 14px; }
+.sub strong { color: var(--platinum); }
+.progress { min-width: 280px; max-width: 420px; flex: 1; }
+.progress-text {
+  display: flex; justify-content: space-between;
+  font-weight: 700; font-size: 18px; margin-bottom: 6px;
+}
+.bar { height: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--pink), var(--gold), var(--cyan));
+  transition: width 0.3s ease;
+}
+.progress-note { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+main { max-width: 1100px; margin: 0 auto; padding: 20px 28px 40px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 18px; }
+#search {
+  flex: 1 1 260px; padding: 10px 12px; font-size: 15px;
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px;
+}
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button, .io button {
+  padding: 8px 12px; font-size: 14px; cursor: pointer;
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 999px;
+}
+.filters button.active { background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 700; }
+.filters button:hover, .io button:hover { border-color: var(--cyan); }
+.spoiler-toggle { font-size: 14px; color: var(--muted); cursor: pointer; }
+.spoiler-toggle input { accent-color: var(--pink); }
+.io { display: flex; gap: 6px; margin-left: auto; }
+.io button.danger { color: var(--danger); border-color: var(--danger); }
+.roadmap {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; padding: 18px 20px; margin-bottom: 20px;
+}
+.roadmap h2 { margin: 0 0 10px; font-size: 20px; }
+.muted { color: var(--muted); font-weight: 400; }
+.stages { margin: 0; padding-left: 22px; }
+.stages li { margin-bottom: 8px; }
+.stage-count { color: var(--cyan); font-size: 13px; }
+.missable-callout {
+  margin: 12px 0 0; padding: 10px 12px;
+  background: #2b1414; border: 1px solid #7a2a2a; border-radius: 8px;
+}
+.list-meta { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+.trophies { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trophy {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 12px 14px; cursor: pointer;
+}
+.trophy:hover { border-color: var(--cyan); }
+.trophy.earned { opacity: 0.72; }
+.trophy.earned .trophy-name { text-decoration: line-through; }
+.trophy input[type="checkbox"] { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--pink); flex: none; cursor: pointer; }
+.trophy-body { flex: 1; min-width: 0; }
+.trophy-name { font-weight: 700; font-size: 16px; }
+.trophy-name .grade-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+.grade-platinum .grade-dot { background: var(--platinum); }
+.grade-gold .grade-dot { background: var(--gold); }
+.grade-silver .grade-dot { background: var(--silver); }
+.grade-bronze .grade-dot { background: var(--bronze); }
+.trophy-desc { color: var(--muted); font-size: 14px; margin: 2px 0 6px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge {
+  font-size: 12px; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+.badge.missable { background: #7a1d1d; border-color: #c0392b; color: #ffd7d7; font-weight: 700; }
+.badge.hidden { border-color: var(--gold); color: var(--gold); }
+.badge.grade-platinum { color: var(--platinum); border-color: var(--platinum); }
+.badge.grade-gold { color: var(--gold); border-color: var(--gold); }
+.badge.grade-silver { color: var(--silver); border-color: var(--silver); }
+.badge.grade-bronze { color: var(--bronze); border-color: var(--bronze); }
+.badge.stage { color: var(--cyan); border-color: var(--cyan); }
+.trophy-guide { font-size: 14px; margin: 8px 0 0; color: var(--ink); }
+.spoiled .trophy-name, .spoiled .trophy-desc, .spoiled .trophy-guide { filter: blur(5px); user-select: none; }
+.spoiled .trophy-name::after { content: " — hidden until earned (spoiler-safe)"; filter: none; color: var(--gold); font-size: 13px; }
+.empty { color: var(--muted); background: var(--panel); border: 1px dashed var(--line); border-radius: 10px; padding: 18px; }
+.detail {
+  position: relative;
+  background: var(--panel-2); border: 1px solid var(--cyan);
+  border-radius: 12px; padding: 22px 24px; margin-top: 20px;
+}
+.detail h2 { margin: 0 0 6px; font-size: 24px; }
+.detail h3 { margin: 18px 0 6px; font-size: 16px; color: var(--cyan); }
+#detail-close {
+  position: absolute; top: 12px; right: 12px;
+  background: none; border: 1px solid var(--line); color: var(--ink);
+  border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 14px;
+}
+.detail-grade { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); }
+.detail-desc { color: var(--muted); margin: 0; font-style: italic; }
+.detail-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.detail-missable {
+  background: #2b1414; border: 1px solid #7a2a2a;
+  border-radius: 8px; padding: 10px 12px;
+}
+.sources { margin: 0; padding-left: 20px; font-size: 14px; }
+.sources li { margin-bottom: 4px; }
+.earned-check { display: block; margin-top: 16px; font-weight: 700; cursor: pointer; }
+.earned-check input { accent-color: var(--pink); width: 18px; height: 18px; }
+footer { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 13px; color: var(--muted); }
+@media (max-width: 640px) {
+  .top { padding: 20px 16px 14px; }
+  main { padding: 16px 16px 32px; }
+  h1 { font-size: 21px; }
+  .brand-mark { width: 48px; height: 48px; font-size: 21px; }
+}
